@@ -1,0 +1,32 @@
+# multipc-sync - Configuracion de ejemplo
+# Copiar a ~/.claude/multipc-config.yaml y editar con tus rutas
+
+# Repos principales a sincronizar
+repos:
+  # Ejemplo: Vault de Obsidian
+  - name: "The Vault"
+    path: "D:/The Vault"          # Ruta absoluta al repo
+    auto_discover: true            # Buscar subrepos git dentro
+    discover_depth: 5              # Profundidad de busqueda
+    conflict_strategy: "theirs"    # Resolver conflictos de cache con remoto
+    conflict_paths:                # Rutas donde aplicar conflict_strategy
+      - ".obsidian/"
+      - ".makemd/"
+
+  # Ejemplo: Config de Claude Code
+  - name: "claude-config"
+    path: "~/.claude"
+    preserve_local:                # Archivos que NO se sobreescriben en pull
+      - "mcp.json"                 # Contiene credenciales locales
+      - ".mcp.json"
+
+  # Ejemplo: Proyecto compartido
+  # - name: "mi-proyecto"
+  #   path: "~/mi-proyecto"
+
+# Verificaciones post-sync (opcional)
+# checks:
+#   - name: "Python"
+#     command: "python --version"
+#   - name: "Node"
+#     command: "node --version"

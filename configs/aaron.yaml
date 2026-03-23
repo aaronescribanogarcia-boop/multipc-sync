@@ -1,0 +1,26 @@
+# Config de Aaron — copiar a ~/.claude/multipc-config.yaml
+
+repos:
+  - name: "The Vault"
+    path: "D:/The Vault"
+    auto_discover: true
+    discover_depth: 5
+    conflict_strategy: "theirs"
+    conflict_paths:
+      - ".obsidian/"
+      - ".makemd/"
+
+  - name: "claude-config"
+    path: "~/.claude"
+    preserve_local:
+      - "mcp.json"
+      - ".mcp.json"
+
+  - name: "algo-trading"
+    path: "~/algo-trading"
+
+checks:
+  - name: "Python"
+    command: "python --version"
+  - name: "Git"
+    command: "git --version"

@@ -1,0 +1,3 @@
+# No subir configs personales activas
+# (los de configs/ son ejemplos compartidos)
+*.local.yaml
